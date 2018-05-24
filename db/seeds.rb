@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Post.create!([
+  {address: "1611 Meridian Ave", city: "Miami Beach", state: "FL", zip: 33139, bedroom: 1.0, bathroom: 1.0, square_feet: 500, description: "Wonderful 1 bedroom 1 bathrom in Emily Condo, wonderful historic building. Fully renovated.", price: 250000, photos: ["meridian.jpg"]},
+  {address: "345 Ocean Drive", city: "Miami Beach", state: "FL", zip: 33139, bedroom: 2.0, bathroom: 1.0, square_feet: 500, description: "Miami Beach classic with a view", price: 345000, photos: ["ocean_dr.jpg"]},
+  {address: "540 West Avenue #512", city: "Miami Beach", state: "FL", zip: 33139, bedroom: 1.0, bathroom: 1.0, square_feet: 600, description: "Turn key apartment at the Bentley Bay with direct bay view. Marble countertops, floor-to-ceiling windows, stainless steel appliances, custom built-in cabinetry. Building features newly remodeled lobby, valet parking, bike cage, garden area, newly constructed dock behind building, pool, gym, two jacuzzis, dry sauna and steam sauna & the Miami skyline! Furniture negotiable. Only 4 apartments per floor. Can be RENTED 12 TIMES a year!! ", price: 400000, photos: ["genMid.A10474688_0.jpg"]},
+  {address: "1201 20th St #413", city: "Miami Beach", state: "FL", zip: 33139, bedroom: 1.0, bathroom: 1.5, square_feet: 701, description: "Newly constructed Palau at Sunset Harbour 1 bed, 1.5 baths for rent. Live in one of the best locations in Miami Beach. You will be able to walk to Publix, Fresh Market, Barry's Bootcamp, Anatomy, and grab a bite at Lucali, Tequiztlan, Icebox Cafe and True Loaf Bakery to name a few. This unit comes with Wolf & Sub-Zero appliances and marble floors. 2 valet parking spaces are also included. Amenities include: rooftop pool, gym and 24 hour security. Garden lounge area. ", price: 540000, photos: ["genMid.A10474416_3_0.jpg"]}
+])
+User.create!([
+  {name: "admin", password_digest: "$2a$10$5TibeUL0e2KGOWLDYTiXJeBoDq382PHzlo.48hw2LOmWcrO8u/Iam"}
+])
