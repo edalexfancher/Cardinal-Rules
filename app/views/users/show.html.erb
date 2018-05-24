@@ -1,0 +1,15 @@
+<div class="control-wrapper">
+	<div class="form-card">
+		<%= render 'posts/form' %>
+		</div>
+		<div class="list-card">
+		<div class="card card-container" id="list edit">
+			<h2>Posted Listings</h2>
+			<ul>
+				<% @posts.each do |post| %>
+				  <li class="listing"><%= link_to post.address, post %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div
+</div>
