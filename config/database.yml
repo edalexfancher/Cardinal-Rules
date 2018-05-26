@@ -78,8 +78,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: cardinalrules_production
-  username: cardinalrules
-  password: <%= ENV['CARDINALRULES_DATABASE_PASSWORD'] %>
+production:  
+  adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
+  username: digitaloceantesting
+  password: ef071293
+  host: localhost
+  database: digitaloceantesting
