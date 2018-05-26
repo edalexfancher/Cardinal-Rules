@@ -23,9 +23,12 @@ default: &default
 
 development:
   <<: *default
-  # database: digitaloceantesting
-  # username: digitaloceantesting
-  # password: 'ef0719293'
+ adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
+  username: digitaloceantesting
+  password: 'ef071293'
+  host: localhost
+  database: digitaloceantesting
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
