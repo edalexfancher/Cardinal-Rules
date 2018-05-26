@@ -1,9 +1,9 @@
 # Change these
 server '138.197.4.153', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:username/appname.git'
-set :application,     'appname'
-set :user,            'deploy'
+set :repo_url,        'https://github.com/phant0mnyc/Cardinal-Rules'
+set :application,     'cardinalrules'
+set :user,            'root'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
