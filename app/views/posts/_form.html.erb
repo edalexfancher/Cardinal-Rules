@@ -27,6 +27,8 @@
 				<%= f.text_field :price, class: "price form-control" %>
 				<%= f.label :description %>
 				<%= f.text_area :description, class: "description form-control" %>
+				<%= f.label :youtube_code %>
+				<%= f.text_area :youtube, class: "form-control" %>
 				<%= f.label :photo_upload %>
 				<%= f.file_field :photos, multiple: true %>
 				<%= f.submit "Submit", class: "form-control"%>

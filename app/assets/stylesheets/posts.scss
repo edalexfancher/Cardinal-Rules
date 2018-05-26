@@ -8,18 +8,39 @@ u.photos {
 }
 
 body {
-    background: url('https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') !important;
+    background: linear-gradient(100deg, rgba(160,82,45,0.6), rgba(130, 82, 45, 0.8)), url(wood.jpeg) !important;
 }
 
 header h1, header h3 {
-	color: black;
+	
 	letter-spacing: 0.05rem;
+}
+
+header h1 {
+	color: #275379;
+	font-size: 4rem;
+}
+
+header h3 {
+	font-size: 2rem;
+	 color: #428bca;
+}
+
+.link {
+    color: #428bca;
+}
+
+.link:hover {
+	cursor: pointer;
+	color: black;
 }
 
 
 #top {
-	background: linear-gradient(rgba(200, 200, 200, 0.6), rgba(255, 255, 255, 0.6));
+	background: linear-gradient(rgba(200, 200, 200, 0.9), rgba(255, 255, 255, 0.9));
 	border-radius: 1rem;
+	z-index: 9999;
+	color: black;
 }
 
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
@@ -37,3 +58,28 @@ margin-bottom: 0.4rem;-size:20px;text-align:center;color: black;padding:7px}
 .contact a.google:hover,.fa-google-plus{color:#dd4b39}
 .contact a.linkedin:hover,.fa-linkedin{color:#0e76a8}
 .contact a.twitter:hover,.fa-twitter{color:#00acee}
+
+.popup {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 20rem;
+	background: white;
+	border-radius: 0.5rem;
+	z-index: 9999;
+}
+
+.form-area {
+	padding: 1rem;
+	height: 100%;
+}
+
+.form-area p {
+	width: 50%;
+}
+
+.input-group-addon.primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 118, 177);
+    border-color: rgb(40, 94, 142);
+}

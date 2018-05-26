@@ -4,6 +4,8 @@
 		</div>
 		<div class="list-card">
 		<div class="card card-container" id="list edit">
+			<h2>Email List</h2>
+			<ul><li><%= link_to 'CSV Download', email_path(:format => :csv )%></li></ul>
 			<h2>Posted Listings</h2>
 			<ul>
 				<% @posts.each do |post| %>

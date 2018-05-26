@@ -1,90 +1,70 @@
-   <div class="container">
-    <div class="well well-sm quick-contact" id="top">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-4">
-                        <header class="responsive">
-        <h1 id="logo">Cardinal Rules Property Investments</h1>
-      </header>
-                    </div>
-                    <div class="col-md-4 contact-email">
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row contact row-first">
-                            <div class="col-md-6">
-                                <a href="http://www.jquery2dotnet.com" class="skype"><i class="fa fa-skype"></i>skypeuser</a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="http://www.jquery2dotnet.com" class="google"><i class="fa fa-google-plus"></i>googleplus</a>
-                            </div>
-                        </div>
-                        <div class="row contact">
-                            <div class="col-md-6">
-                                <a href="http://www.jquery2dotnet.com" class="linkedin"><i class="fa fa-linkedin"></i>linkedin_id</a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="http://www.jquery2dotnet.com" class="twitter"><i class="fa fa-twitter"></i>twitter_id</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <header class="responsive">
-                 <h3>Call us at 800-111-1231</h3>
-                 <h3>Email us at cardinalproperty@gmail.com</h3>
-      </header>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+  <div class="well well-sm quick-contact" id="top">
+      <div class="row">
+                  
+                      <header class="responsive">
+      <h1 id="logo">Cardinal Rules Property Investments</h1>
+      <h3><strong>Call us:</strong> 502-909-5853</h3>
+               <h3><%= mail_to "cardinalinvestmentproperty@gmail.com" do %>
+  <strong>Email us:</strong> <span>cardinalinvestmentproperty@gmail.com</span>
+<% end %></h3>
+    </header>
+          </div>
+      </div>
+  </div>
 </div>
 
-
-
-   <div class="container-fluid">
-      <div class="container container-pad" id="property-listings">  
-          <div class="row"><% @posts.each do |post| %>
-              <div class="col-sm-6"> 
-                  
-                  <!-- Begin Listing: 609 W GRAVERS LN-->
-                  <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
-                      <div class="media">
-                        <%= image_tag(post.photos.first.to_s, class: "responsive") %> 
-                          <a class="pull-left" href="#" target="_parent">
-                          
-
-                          <div class="clearfix visible-sm"></div>
-
-                          <div class="media-body fnt-smaller">
-                              <a href="#" target="_parent"></a>
-
-                              <h4 class="media-heading">
-                                <a href="#" target="_parent"><%= number_to_currency(post.price, precision: 0) %><small class="pull-right"><%= post.address %></small></a></h4>
-
-
-                              <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
-                                  <li>4,820 SqFt</li>
-
-                                  <li style="list-style: none">|</li>
-
-                                  <li><%= post.bedroom %> Beds</li>
-
-                                  <li style="list-style: none">|</li>
-
-                                  <li><%= post.bathroom %> Baths</li>
-                              </ul>
-
-                              <span class="fnt-smaller fnt-lighter fnt-arial">Courtesy of HS Fox & Roach-Chestnut Hill
-                              Evergreen</span>
-                          </div>
+<div class="container-fluid">
+  <div class="container container-pad" id="property-listings">  
+      <div class="row"><% @posts.each do |post| %>
+          <div class="col-sm-6"> 
+              
+              
+              <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
+                  <div class="media">
+                    <% if post.youtube %>
+                      <div class="video" id='video<%=post.id%>'>
+                        <iframe src='https://www.youtube.com/embed/<%=post.youtube %>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div id="close" onclick="document.getElementById('video<%=post.id%>').style.display = 'none';">Close</div>
                       </div>
-                  </div><!-- End Listing-->
-                  
-              </div><!-- End Col -->
-              <% end %>
-          </div><!-- End row -->
-        </div><!-- End container -->
-    </div>
+                    <% end %>
+                    <%= image_tag(post.photos.first.to_s, class: "responsive") %> 
+                      <a class="pull-left" href="#" target="_parent">
+                      
+
+                      <div class="clearfix visible-sm"></div>
+
+                      <div class="media-body fnt-smaller">
+                          <a href="#" target="_parent"></a>
+
+                          <h4 class="media-heading">
+                            <%= number_to_currency(post.price, precision: 0) %><small class="pull-right"><%= post.address %></small></h4>
 
 
+                          <ul class="list-inline mrg-0 btm-mrg-10 clr-535353">
+                              <li>4,820 SqFt</li>
+
+                              <li style="list-style: none">|</li>
+
+                              <li><%= post.bedroom %> Beds</li>
+
+                              <li style="list-style: none">|</li>
+
+                              <li><%= post.bathroom %> Baths</li>
+                              <br/>
+                              <% if post.youtube %><li class="link" id="videos-click" onclick="document.getElementById('video<%=post.id%>').style.display = 'block';">Video</li><li>|</li><% end %>
+                              <li class="link" id="photos-click">More Photos</li>
+                          </ul>
+
+                         
+                      </div>
+                  </div>
+              </div><!-- End Listing-->
+              
+          </div><!-- End Col -->
+          <% end %>
+      </div><!-- End row -->
+    </div><!-- End container -->
+</div>
+
+<%= render 'email/email' %>

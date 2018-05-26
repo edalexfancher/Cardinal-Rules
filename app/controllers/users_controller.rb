@@ -6,8 +6,9 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(1)
 		@posts = Post.all
-		# @user = User.find(current_user.id)
-	end
+
+		@emails = Post.all
+  end
 
 	private 
 
