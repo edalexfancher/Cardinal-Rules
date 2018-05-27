@@ -1,5 +1,5 @@
 # Change these
-server '138.197.4.153', roles: [:web, :app, :db], primary: true
+server '104.131.71.26', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/phant0mnyc/Cardinal-Rules'
 set :application,     'cardinalrules'
