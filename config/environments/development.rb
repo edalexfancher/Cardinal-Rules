@@ -1,5 +1,4 @@
 Rails.application.configure do
-  config.secret_key_base = 'c38da39170afd6a0ebef7a31fd7bab82fa26264a2c2f66413703fdc228663c46ce922fe25f285065013b563a2a16c3ce61db5cb57018b5228fbdbd6ef68135d7'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
